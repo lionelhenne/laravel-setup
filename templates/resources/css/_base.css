@@ -1,0 +1,118 @@
+/* Reset des liens pour éviter les conflits dans les composants */
+nav a,
+button a {
+    @apply no-underline;
+}
+
+/* Styles de contenu typographique */
+h1 {
+    @apply text-4xl text-black font-black mb-6;
+}
+
+h2 {
+    @apply text-3xl font-black mb-5;
+}
+
+h3 {
+    @apply text-2xl font-bold mb-4;
+}
+
+h4 {
+    @apply text-xl font-bold mb-3;
+}
+
+h5 {
+    @apply text-base font-bold mb-2;
+}
+
+h6 {
+    @apply text-sm font-bold mb-1;
+}
+
+a {
+    @apply underline text-blue-600 hover:text-blue-800 transition-colors;
+}
+
+p,
+ul,
+ol,
+dl,
+table {
+    @apply text-base leading-7 mb-4;
+}
+
+ul,
+ol {
+    @apply pl-6;
+
+    li {
+        @apply mb-1;
+    }
+}
+
+ul {
+    @apply list-disc;
+}
+
+ol {
+    @apply list-decimal;
+}
+
+dl {
+    dt {
+        @apply font-semibold;
+    }
+
+    dd {
+        @apply mb-2;
+    }
+}
+
+strong {
+    @apply font-bold;
+}
+
+em {
+    @apply italic;
+}
+
+code {
+    @apply inline-block bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic text-gray-700 my-4;
+}
+
+hr {
+    @apply my-8 border-t border-gray-300;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    @apply block w-full max-w-full h-auto;
+}
+
+table {
+    @apply w-full border-collapse;
+
+    th,
+    td {
+        @apply border border-gray-300 px-3 py-2 text-left;
+    }
+
+    th {
+        @apply bg-gray-50 font-semibold;
+    }
+}
+
+pre {
+    @apply bg-gray-100 p-4 rounded overflow-x-auto;
+
+    code {
+        @apply bg-transparent p-0;
+    }
+}

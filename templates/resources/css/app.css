@@ -1,0 +1,89 @@
+/* ----------------------------------------------------------------------
+// Step 1: External Font/CSS Imports
+// ---------------------------------------------------------------------- */
+@import "@fontsource-variable/open-sans";
+@import "@fontsource-variable/merriweather";
+@import "@fontsource-variable/jetbrains-mono";
+@import "remixicon/fonts/remixicon.css";
+
+/* ----------------------------------------------------------------------
+// Step 2: @font-face (if any local fonts were used, they'd go here)
+// ---------------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------------------
+// Step 3: @config (if legacy JS config was absolutely needed - not recommended)
+// ---------------------------------------------------------------------- */
+/* @config "./tailwind.config.js"; */
+
+/* ----------------------------------------------------------------------
+// Step 4: Core Tailwind Styles
+// ---------------------------------------------------------------------- */
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------
+// Step 5: Theme Customization
+// ---------------------------------------------------------------------- */
+@theme {
+    /* Override Tailwind's default font families or add new ones */
+    --font-sans: 'Open Sans Variable', ui-sans-serif, system-ui, -apple-system, "SF Pro Display", "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --font-serif: 'Merriweather Variable', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+    --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, "Cascadia Code", Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* Define additional custom font utilities (these will generate font-custom-*) */
+    /* --font-custom-unica-one: 'Unica One', sans-serif; */
+
+    /* If _colors.css contains color token definitions (CSS variables), */
+    /* they should be migrated here. For example: */
+    /* --color-flamepea: #E7591C;
+    --color-havelock: #5B6ADC;
+    --color-dorado: #6A5C52;
+    --color-lavande: #9333EA;
+    --color-miel: #D4A843;
+    --color-ardoise: #64748B;
+    --color-camouflage: #7F9375;
+    --color-neutral: #7F7F7F; */
+}
+
+/* ----------------------------------------------------------------------
+// Step 6: @source (if needed for additional content paths or safelisting)
+// ---------------------------------------------------------------------- */
+/* @source "../node_modules/some-library/dist/** /*.js"; */
+/* @source inline("opacity-50", "hover:opacity-75"); */
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* ----------------------------------------------------------------------
+// Step 7: Custom Utility Definitions
+// ---------------------------------------------------------------------- */
+@utility container {
+    @apply mx-auto px-4;
+}
+
+/* ----------------------------------------------------------------------
+// Step 8: Custom Cascade Layers
+// ---------------------------------------------------------------------- */
+@layer base {
+    /* Custom base styles can go here, e.g., */
+    body { @apply antialiased; }
+    html { @apply scroll-smooth; }
+    /* Or import a base styles file: @import "./_base.css"; */
+}
+
+@layer components {
+    /* Import a component styles file: @import "./components/_navbar.css"; */
+    @import "./_base.css";
+    /* @import "./_navbar.css"; */
+    /* @import "./_form.css"; */
+    /* @import "./_table.css"; */
+}
+
+@layer utilities {
+    /* Custom utility overrides or additional low-level utilities can go here, */
+    /* though @utility is preferred for new utility definitions. */
+    /* Or import a utilities styles file: @import "./components/_utilities.css"; */
+}
