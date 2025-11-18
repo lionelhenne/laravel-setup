@@ -79,6 +79,7 @@ EOF
     if ! grep -q "^COCKPIT_GRAPHQL_ENDPOINT=" ".env"; then
         cat >> ".env" << 'EOF'
 
+COCKPIT_URL=
 COCKPIT_GRAPHQL_ENDPOINT=
 COCKPIT_API_TOKEN=
 EOF
